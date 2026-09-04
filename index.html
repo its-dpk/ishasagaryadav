@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>YOUR NAME | Public Representative</title>
+
+    <meta name="description"
+          content="Official website of YOUR NAME. Learn about my journey, vision, priorities and how you can connect with the campaign.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #222;
+            background: #fff;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* HEADER */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+        }
+
+        nav {
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #222;
+            font-weight: 600;
+        }
+
+        /* HERO */
+
+        .hero {
+            background: #f5f5f5;
+            padding: 80px 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 6vw, 68px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 18px;
+            display: block;
+            margin: auto;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 24px;
+            border-radius: 7px;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+
+        .btn-primary {
+            background: #222;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            border: 2px solid #222;
+            color: #222;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 75px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        /* ABOUT */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .about p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        /* PRIORITIES */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            padding: 30px;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            background: #fff;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .card-number {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .card p {
+            color: #666;
+        }
+
+        /* CTA */
+
+        .cta {
+            background: #222;
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width: 650px;
+            margin: 0 auto 25px;
+            color: #ddd;
+        }
+
+        .cta .btn-secondary {
+            border-color: white;
+            color: white;
+        }
+
+        /* SOCIAL */
+
+        .social {
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            border-radius: 7px;
+            color: #222;
+            font-weight: 600;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 50px 0;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 55px 0;
+            }
+
+            .cta h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+    <div class="container">
+        <nav>
+
+            <div class="logo">
+                ISHA YADAV
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#priorities">Priorities</a></li>
+                <li><a href="#connect">Connect</a></li>
+            </ul>
+
+        </nav>
+    </div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div>
+
+                <h1>
+                    Isha Yadav
+                </h1>
+
+                <h2>
+                    Social Worker
+                </h2>
+
+                <p>
+                    Working for a stronger, more inclusive and
+                    better future for our community.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="#connect"
+                       class="btn btn-primary">
+                        Connect With Me
+                    </a>
+
+                    <a href="https://wa.me/9799922275"
+                       class="btn btn-secondary">
+                        WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-image">
+
+                <img src="https://uploads.onecompiler.io/4529eu38x/1788532163336/DSC_0009%20copy.jpg"
+                     alt="IshaImg"/>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>About Me</h2>
+
+            <p>
+                My journey, values and commitment to public service
+            </p>
+
+        </div>
+
+
+        <div class="about">
+
+            <div>
+
+                <h3>
+                    Serving With Purpose
+                </h3>
+
+                <p>
+                    My name is Isha Yadav. I am committed to working
+                    for the people and building a better future for
+                    our community.
+                </p>
+
+                <p>
+                    I believe that effective leadership begins with
+                    listening to people, understanding their concerns
+                    and working together to create practical solutions.
+                </p>
+
+                <p>
+                    My focus is on Road Maintenance, Street lightning, 
+                    Drainage system and Welfare of citizen services.
+                    
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    My Vision
+                </h3>
+
+                <p>
+                    A stronger community built on opportunity,
+                    transparency, development and responsible leadership.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRIORITIES -->
+
+<section id="priorities">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Our Priorities</h2>
+
+            <p>
+                The issues we are committed to working on
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="card-number">
+                    01
+                </div>
+
+                <h3>
+                    Infrastructure & Civic Amenities
+                </h3>
+
+                <p>
+                    We are committed to building modern, well-planned and sustainable infrastructure that improves everyday life for every citizen. 
+                    Our focus is on better roads, reliable water supply, 
+                    proper drainage and sanitation, clean streets, 
+                    efficient waste management, adequate street lighting, 
+                    accessible public spaces, and improved connectivity.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-number">
+                    02
+                </div>
+
+                <h3>
+                    Public Health & Sanitation
+                </h3>
+
+                <p>
+                    We are committed to ensuring accessible, affordable, 
+                    and quality healthcare while maintaining a clean and 
+                    healthy environment for every citizen. Our focus is on 
+                    strengthening public health services, improving sanitation 
+                    and cleanliness, ensuring proper waste management, 
+                    maintaining clean drinking water and hygienic public spaces, 
+                    and promoting preventive healthcare and health awareness.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-number">
+                    03
+                </div>
+
+                <h3>
+                    Community Spaces & Environment
+                </h3>
+
+                <p>
+                    We are committed to creating clean, green, 
+                    and welcoming community spaces that enhance the 
+                    quality of life for everyone. Our focus is on 
+                    developing and maintaining parks, playgrounds, 
+                    open spaces, and community areas while promoting 
+                    tree plantation, cleanliness, water conservation, 
+                    and environmental awareness.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CALL TO ACTION -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>
+            Be Part of the Journey
+        </h2>
+
+        <p>
+            Stay connected, share your ideas and join us in
+            working towards a better future.
+        </p>
+
+        <a href="#connect"
+           class="btn btn-secondary">
+            Join / Connect
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- SOCIAL MEDIA -->
+
+<section id="connect">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Connect With Me</h2>
+
+            <p>
+                Follow the campaign and stay updated
+            </p>
+
+        </div>
+
+
+        <div class="social-links">
+
+            <a href="https://facebook.com/YOURPAGE"
+               target="_blank">
+                Facebook
+            </a>
+
+            <a href="https://instagram.com/YOURPAGE"
+               target="_blank">
+                Instagram
+            </a>
+
+            <a href="https://wa.me/9799922275"
+               target="_blank">
+                WhatsApp
+            </a>
+
+            <a href="mailto:Support@ishasagaryadav.in">
+                Email
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container">
+
+        <p>
+            © 2026 ISHA YADAV. All Rights Reserved.
+        </p>
+
+        <p>
+            Republican Party of India
+        </p>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
